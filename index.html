@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - Juego del Leñador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <header class="header-inicio">
+            <img src="img/tronco.png" alt="Tronco" class="logo-tronco">
+            <h1>El Gran Leñador</h1>
+        </header>
+        <main class="columnas5">
+            <h2>Bienvenido al desafío</h2>
+            <p>Demuestra tu habilidad cortando troncos sin que las ramas te aplasten.</p>
+
+            <div class="acciones-home">
+                <a href="juego.html"><button class="btn-jugar">COMENZAR A JUGAR</button></a>
+                <button id="btn-cambiar-usuario" class="btn-ranking">CAMBIAR DE USUARIO</button>
+                <a href="ranking.html"><button class="btn-ranking">VER RANKING</button></a>
+                <button id="btn-audio-toggle" class="btn-toggle" type="button">🔊 Audio: ON</button>
+            </div>
+        </main>
+    </div>
+    <script>
+        const STORAGE_KEY_AUDIO = 'audioLeñador';
+        const audioGuardado = JSON.parse(localStorage.getItem(STORAGE_KEY_AUDIO) ?? 'true');
+        const btnAudio = document.getElementById('btn-audio-toggle');
+        btnAudio.textContent = audioGuardado ? '🔊 Audio: ON' : '🔇 Audio: OFF';
+
+        btnAudio.addEventListener('click', function() {
+            const nuevoEstado = !(JSON.parse(localStorage.getItem(STORAGE_KEY_AUDIO) ?? 'true'));
+            localStorage.setItem(STORAGE_KEY_AUDIO, JSON.stringify(nuevoEstado));
+            btnAudio.textContent = nuevoEstado ? '🔊 Audio: ON' : '🔇 Audio: OFF';
+        });
+
+        document.getElementById('btn-cambiar-usuario').addEventListener('click', function() {
+            localStorage.removeItem('jugadorActualLeñador');
+            window.location.href = 'juego.html';
+        });
+    </script>
+</body>
+</html>

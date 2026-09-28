@@ -1,0 +1,213 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Titillium Web', sans-serif; /* Usando una de tus fuentes */
+    background: url('../img/fodo_pasto.jpg') center/cover no-repeat fixed;
+    color: #333;
+}
+
+/* Contenedor principal */
+#contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.12);
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+/* Header y Nav */
+.header-inicio {
+    position: relative;
+    background: transparent;
+    color: #f7e6c6;
+    padding: 24px 20px 10px;
+    text-align: center;
+    overflow: visible;
+}
+
+.header-inicio::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: min(70vw, 420px);
+    height: 220px;
+    background: url('../img/tronco.png') center/contain no-repeat;
+    filter: drop-shadow(0 10px 14px rgba(0,0,0,0.25));
+    z-index: 0;
+}
+
+.header-inicio h1 {
+    position: relative;
+    z-index: 1;
+    margin: 120px 0 0;
+    font-family: 'MedievalSharp', 'Georgia', serif;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: #f3d7a0;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 #1d1d1d, 6px 6px 0 rgba(0,0,0,0.25);
+}
+
+.logo-tronco {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #CF7D5C; /* Naranja terracota */
+}
+
+/* Botones generales */
+.btn-jugar, .btn-reintentar, .btn-ranking, .btn-borrar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-jugar, .btn-reintentar {
+    background-color: #08b124; /* Naranja */
+    color: white;
+}
+
+.btn-ranking {
+    background-color: #bcddee;
+    color: rgb(15, 14, 14);
+}
+
+.btn-jugar:hover, .btn-reintentar:hover {
+    background-color: #0dcc17;
+}
+
+.btn-ranking:hover {
+    background-color: #6ebff5;
+}
+
+.btn-borrar {
+    /* Verde grisáceo */
+    color: rgb(221, 74, 74);
+}
+
+.acciones-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.acciones-home a {
+    text-decoration: none;
+}
+
+.btn-toggle {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: none;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-toggle:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+
+/* Estilos para el Formulario Flotante (Overlay) */
+.overlay-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(13, 64, 92, 0.95); /* Azul oscuro con transparencia */
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    min-width: 300px;
+}
+
+.overlay-form input {
+    margin: 8px;
+    padding: 10px;
+    width: 85%;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Estilos para la Tabla de Ranking */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0D405C;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.columnas5 {
+    position: relative;
+    z-index: 1;
+    padding: 28px 24px 30px;
+    text-align: center;
+    background: rgba(17, 22, 14, 0.42);
+    color: #f4f1e8;
+    border-radius: 16px;
+    margin: 16px auto 0;
+    max-width: 700px;
+    backdrop-filter: blur(1px);
+}
+
+.columnas5 h2,
+.columnas5 p {
+    color: #fffdf7;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.columnas5 h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.columnas5 p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
